@@ -34,6 +34,5 @@ public class TestRunner {
 		Reporter.setSystemInfo("Operation System", System.getProperty("os.name").toString());
 		Reporter.setSystemInfo("Environment", "UAT04");
 
-	
-} 
+ } 
 }

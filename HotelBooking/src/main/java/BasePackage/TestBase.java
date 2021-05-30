@@ -8,7 +8,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 	
@@ -43,14 +46,22 @@ public static void initialization()
 	String Browser = prop.getProperty("browser");
 	if(Browser.equalsIgnoreCase("Chrome"))
 	{
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + prop.getProperty("Chrome_driverpath"));
+		WebDriverManager.chromedriver().setup();
+		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + prop.getProperty("Chrome_driverpath"));
 		driver = new ChromeDriver();
 	}
-	if(Browser.equalsIgnoreCase("firefox"))
+	else if(Browser.equalsIgnoreCase("firefox"))
 	{
-		System.setProperty("webdriver.gecko.driver", prop.getProperty("Firefox_driverpath"));
+		WebDriverManager.firefoxdriver().setup();
+	//	System.setProperty("webdriver.gecko.driver", prop.getProperty("Firefox_driverpath"));
 		driver = new FirefoxDriver();
 	}
+	else if(Browser.equalsIgnoreCase("edge"))
+	{
+		WebDriverManager.edgedriver().setup();
+		driver=new EdgeDriver();
+	}
+	
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
