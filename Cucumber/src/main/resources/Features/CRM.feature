@@ -12,4 +12,4 @@ Then Fill Required fields in Create Task page
 |Doctor|Cars|Deal Accepted|7814949589|Full Time|90|
 |Engineer|Trucks|Deal Rejected|9958857899|Exempted|88|
 |CA|Money|Partial Accepted|4587956666|Rejected|100|
-
+Then Close the browser

@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = "src//main//resources//Features" ,
 		glue = {"StepDefs"},
-		dryRun = false,
+		dryRun = true,
 		strict = true,
 		monochrome = true,
 		plugin = {"pretty",
