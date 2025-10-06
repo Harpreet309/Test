@@ -5,16 +5,16 @@
   <suite started-at="2020-10-22T10:05:55Z" name="Default suite" finished-at="2020-10-22T10:07:08Z" duration-ms="72975">
     <groups>
       <group name="cucumber">
-        <method signature="TestRunner.runFeature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Utility.TestRunner@4b0d79fc]" name="runFeature" class="Utility.TestRunner"/>
+        <method signature="utility.TestRunner.runFeature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Utility.utility.TestRunner@4b0d79fc]" name="runFeature" class="Utility.utility.TestRunner"/>
       </group> <!-- cucumber -->
     </groups>
     <test started-at="2020-10-22T10:05:55Z" name="Default test" finished-at="2020-10-22T10:07:08Z" duration-ms="72975">
-      <class name="Utility.TestRunner">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Utility.TestRunner@4b0d79fc]" started-at="2020-10-22T10:05:55Z" name="setup" finished-at="2020-10-22T10:05:56Z" duration-ms="1035" status="PASS">
+      <class name="Utility.utility.TestRunner">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Utility.utility.TestRunner@4b0d79fc]" started-at="2020-10-22T10:05:55Z" name="setup" finished-at="2020-10-22T10:05:56Z" duration-ms="1035" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="runFeature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Utility.TestRunner@4b0d79fc]" started-at="2020-10-22T10:05:57Z" name="runFeature" data-provider="getFeatures" finished-at="2020-10-22T10:07:08Z" duration-ms="71413" status="PASS">
+        <test-method signature="runFeature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Utility.utility.TestRunner@4b0d79fc]" started-at="2020-10-22T10:05:57Z" name="runFeature" data-provider="getFeatures" finished-at="2020-10-22T10:07:08Z" duration-ms="71413" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,7 +25,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runFeature -->
-      </class> <!-- Utility.TestRunner -->
+      </class> <!-- Utility.utility.TestRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
