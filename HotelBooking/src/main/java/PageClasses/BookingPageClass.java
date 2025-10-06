@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 
+import java.time.Duration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,12 +17,12 @@ import BasePackage.Screenshot;
 import BasePackage.TestBase;
 import junit.framework.Assert;
 
-public class BookingPageClass extends TestBase {
+ public class BookingPageClass extends TestBase {
 	
 	 private Pattern regexPattern;
 	 private Matcher regMatcher;
 	
-	WebDriverWait wait = new WebDriverWait(driver, 30);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	
 	@FindBy(id="txtFirstName")
 	WebElement FirstName;

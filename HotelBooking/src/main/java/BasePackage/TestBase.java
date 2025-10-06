@@ -1,8 +1,10 @@
 package BasePackage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -21,12 +23,15 @@ public class TestBase {
 	public TestBase() 
 	{
 		prop = new Properties();
-		
-		String Path =  System.getProperty("user.dir") + "\\src\\main\\resources\\Config\\config.properties";
+
+
+        String path = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" +
+                File.separator + "resources" + File.separator + "Config" + File.separator + "config.properties";
+
 		
 		try
 		{
-			FileInputStream fin = new FileInputStream(Path);
+			FileInputStream fin = new FileInputStream(path);
 			prop.load(fin);
 		}
 		catch(FileNotFoundException e)
@@ -64,9 +69,11 @@ public static void initialization()
 	
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
-	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-	driver.get(System.getProperty("user.dir") +prop.getProperty("Login_url"));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+    String loginPath = System.getProperty("user.dir") + prop.getProperty("Login_url");
+    File loginFile = new File(loginPath);
+    driver.get(loginFile.toURI().toString());
 }
 
 public static void shutdown()
